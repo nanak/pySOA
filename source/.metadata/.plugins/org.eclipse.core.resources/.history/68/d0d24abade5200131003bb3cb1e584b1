@@ -1,0 +1,12 @@
+import SOAPpy
+from xml.dom.minidom import parse
+dom = parse("wissensdatenbank.xml")
+
+
+
+
+def search(suchwort):
+    
+server = SOAPpy.SOAPServer(("localhost", 8080))
+server.registerFunction(search)
+server.serve_forever()

@@ -1,0 +1,17 @@
+import SOAPpy
+from xml.dom.minidom import parse
+dom = parse("wissensdatenbank.xml")
+
+
+
+
+def search(suchwort):
+    nodes = dom.getElementsByTagName('eintrag')
+    for node in nodes:
+        titel = node.getAttributes('titel')
+        if titel is suchwort:
+            return titel.getElementsByTagName('inhalt')
+        
+server = SOAPpy.SOAPServer(("localhost", 8080))
+server.registerFunction(search)
+server.serve_forever()

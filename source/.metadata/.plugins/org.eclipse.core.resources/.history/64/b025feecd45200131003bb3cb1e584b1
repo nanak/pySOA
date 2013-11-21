@@ -1,0 +1,11 @@
+import SOAPpy
+
+
+
+def search(suchwort):
+    return ''
+        
+        
+server = SOAPpy.SOAPServer(("localhost", 8080))
+server.registerFunction(search)
+server.serve_forever()

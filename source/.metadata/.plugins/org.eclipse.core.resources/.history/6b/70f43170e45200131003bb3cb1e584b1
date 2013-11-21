@@ -1,0 +1,27 @@
+import SOAPpy
+import xml.etree.ElementTree as ET
+
+
+tree = ET.parse('wissensdatenbank.xml')
+root = tree.getroot()
+
+for country in root.findall('eintrag'):
+    rank = country.find('titel').text
+    name = country.get('inhalt')
+    print name, rank
+
+"""
+def search(suchwort):
+    s= root[0][0].text
+    s.lstrip()
+    if s == suchwort:
+        return root[0][1].text
+       
+   
+def insert(element, inhalt):
+    return ""    
+    
+server = SOAPpy.SOAPServer(("localhost", 8080))
+server.registerFunction(search)
+server.serve_forever()
+"""

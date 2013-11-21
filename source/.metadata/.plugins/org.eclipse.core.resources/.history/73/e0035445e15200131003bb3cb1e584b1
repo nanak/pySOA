@@ -1,0 +1,15 @@
+import SOAPpy
+import xml.etree.ElementTree as ET
+
+
+tree = ET.parse('country_data.xml')
+root = tree.getroot()
+
+
+
+
+def search(suchwort):
+    
+server = SOAPpy.SOAPServer(("localhost", 8080))
+server.registerFunction(search)
+server.serve_forever()

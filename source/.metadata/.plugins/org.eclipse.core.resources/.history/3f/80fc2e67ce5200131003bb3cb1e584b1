@@ -1,0 +1,14 @@
+import SOAPpy
+import xml.etree.ElementTree as ET
+from os import path
+
+file_path = path.relpath("pySOA/wissensdatenbank.xml")
+tree = ET.parse('../wissensdatenbank.xml')
+root = tree.getroot()
+
+def hello():
+    return "Hello World"
+
+server = SOAPpy.SOAPServer(("localhost", 8080))
+server.registerFunction(hello)
+server.serve_forever()

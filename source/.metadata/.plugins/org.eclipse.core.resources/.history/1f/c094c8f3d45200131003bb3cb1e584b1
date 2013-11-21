@@ -1,0 +1,15 @@
+import SOAPpy
+from xml.dom.minidom import parse
+dom = parse("foo.xml")
+for node in dom.getElementsByTagName('bar'):  # visit every node <bar />
+    print node.toxml()
+
+
+
+def search(suchwort):
+    return ''
+        
+        
+server = SOAPpy.SOAPServer(("localhost", 8080))
+server.registerFunction(search)
+server.serve_forever()

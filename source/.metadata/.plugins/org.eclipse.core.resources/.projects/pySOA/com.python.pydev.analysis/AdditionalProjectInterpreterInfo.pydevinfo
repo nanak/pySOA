@@ -5,10 +5,37 @@
 SOAClient|0|/home/pmuehl/Documents/pySOA/source/pySOA/SOAClient.py
 -- END DISKCACHE
 -- START DICTIONARY
-0
+1
+1=SOAClient
 -- END DICTIONARY
 -- START TREE 1
-0
+26
+!<m|0|
+ali|0|
+aut|0|
+bit|0|
+con|0|
+doc|0|
+dom|0|
+fil|0|
+get|0|
+hel|0|
+i|0|
+inh|0|
+ins|0|
+nam|0|
+nod|0|
+ran|0|
+ref|0|
+roo|0|
+s|0|
+sea|0|
+ser|1|server!11@
+suc|1|suchwort!11@
+swo|1|swort!11@
+t|0|
+tit|0|
+tre|0|
 -- END TREE
 -- START TREE 2
 0

@@ -1,0 +1,23 @@
+import SOAPpy
+import xml.etree.ElementTree as ET
+
+tree = ET.parse('wissensdatenbank.xml')
+root = tree.getroot()
+
+for eintrag in root.iter('eintrag'):
+    print eintrag.attrib
+        
+def search(suchwort):
+    for eintrag in root.find('eintrag'):
+        titel= eintrag.find('titel')
+        inhalt= eintrag.get('inhalt')
+        if titel is suchwort == True:
+            return inhalt
+        else:
+            return "Eintrag nicht gefunden"
+        
+        
+        
+server = SOAPpy.SOAPServer(("localhost", 8080))
+server.registerFunction(search)
+server.serve_forever()

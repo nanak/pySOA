@@ -1,0 +1,5 @@
+import SOAPpy
+#Connect to the server
+server = SOAPpy.SOAPProxy("http://localhost:8080/")
+
+print server.hello()

@@ -1,0 +1,23 @@
+import SOAPpy
+from xml.dom.minidom import parse
+dom = parse("wissensdatenbank.xml")
+for node in dom.getElementsByTagName('titel'):  # visit every node 
+    Title= node.childNodes[0].nodeValue
+    print Title
+
+def getChildrenByTagName(node, tagName):
+    for child in node.childNodes:
+        if child.nodeType==child.ELEMENT_NODE and (tagName=='*' or child.tagName==tagName):
+            yield child
+
+for topic in dom.getElementsByTagName('eintrag'):
+    title= list(getChildrenByTagName(topic,'titel'))[0]         # or just get(...).next()
+    print title.firstChild.data
+
+def search(suchwort):
+    return ''
+        
+        
+server = SOAPpy.SOAPServer(("localhost", 8080))
+server.registerFunction(search)
+server.serve_forever()
