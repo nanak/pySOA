@@ -1,0 +1,46 @@
+#-*- coding: utf-8 -*-
+import SOAPpy
+import xml.etree.ElementTree as ET
+
+
+tree = ET.parse('wissensdatenbank.xml')
+root = tree.getroot()
+def search(suchwort):
+    """
+    Methode zum suchen in der geöffneten XML- Datei
+    @param suchwort: der zu suchende Beitrag
+    @return: Der Beitrag mit entfernten Leerzeichen 
+    """
+    for tags in root.findall('eintrag'):
+        titel = tags.find('titel').text
+        inhalt = tags.find('inhalt').text
+        if titel.strip() == suchwort:
+            return inhalt.strip()
+        else:
+            return "Kein Eintrag gefunden"
+            
+def insert(titel, inhalt, tag):
+    """
+    Funktion um Neue Inhalte in die XML- Datei einzufügen
+    @param titel: Der Titel des Beitrages
+    @param inhalt: Der Beitrag an sich 
+    @param tag: Tag des Beitrages 
+    @return: True wenn der Vorgang abgeschlossen wurde, False falls Probleme auftraten
+    """
+    a = ET.Element('eintrag')
+    b = ET.SubElement(a, 'titel')
+    b.text(titel)
+    c = ET.SubElement(a, 'inhalt')
+    c.text(inhalt)
+    d = ET.SubElement(c, 'tags')
+    d.text(tag)
+    if ET.dump(a) == True:
+        return True
+    else:
+        return False   
+    
+server = SOAPpy.SOAPServer(("localhost", 8080))
+server.registerFunction(search)
+server.registerFunction(insert)
+server.serve_forever()
+

@@ -1,0 +1,15 @@
+#-*- coding: utf-8 -*-
+import SOAPpy
+#Connect to the server
+server = SOAPpy.SOAPProxy("http://localhost:8080/")
+entsch= raw_input("Wollen sie Beiträge lesen oder einen Neuen hinzufügen? \n geben Sie r für lesen oder a für hinzufügen ein ")
+if entsch.strip()=='r':
+    swort= raw_input("Geben Sie ihr gesuchtes Thema ein: ")
+    suchwort= swort.strip()
+    print server.search(suchwort)
+if entsch.strip()=='a':
+    titel= raw_input("Geben Sie den Titel Ihres Beitrages an: ")
+    inhalt= raw_input("Schreiben Sie ihren Beitrag: ")
+    tag= raw_input("Definieren Sie ein Tag für ihren Beitrag: ")
+    print server.insert(titel.strip(), inhalt.strip(), tag.strip())
+    
