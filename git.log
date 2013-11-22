@@ -1,0 +1,35 @@
+commit ca5504e6d1b91a5050956cc727c4244cf53590dc
+Author: Nanak Tattyrek <nanak@tattyrek.at>
+Date:   Thu Nov 21 22:28:47 2013 +0100
+
+    Hinzufuegen von Daten implementiert
+
+commit c5aebd0ba38cc9a842752f702367d8550cc5b332
+Author: Patrick Muehl <pmuehl@student.tgm.ac.at>
+Date:   Thu Nov 21 21:03:31 2013 +0100
+
+    Suchfunktion hinzugefügt
+
+commit b0fc4d98f441961df8446b4425e431c5fc5618e1
+Author: Nanak Tattyrek <nanak@tattyrek.at>
+Date:   Thu Nov 21 17:04:58 2013 +0100
+
+    wissensdatenbank erstellt
+
+commit c416aa9ec3b144c1634b1969a52fc77056b9a246
+Author: Patrick Muehl <pmuehl@student.tgm.ac.at>
+Date:   Thu Nov 21 14:15:05 2013 +0100
+
+    simple implementation of Client and Server
+
+commit 2f8c0755acf62acee690f4d2cd919d2223532329
+Author: Patrick Muehl <pmuehl@student.tgm.ac.at>
+Date:   Fri Oct 25 13:07:02 2013 +0200
+
+    Added Package and started implementing
+
+commit 9d66379197aad29a5e143f57e91164085da8d794
+Author: Nanak Tattyrek <nanak@tattyrek.at>
+Date:   Fri Oct 25 02:48:24 2013 -0700
+
+    Initial commit
