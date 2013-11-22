@@ -22,7 +22,7 @@ def search(suchwort):
         if titel.strip() == suchwort:
             return inhalt.strip()
         else:
-            return "Kein Eintrag gefunden"
+            continue
             
 def insert(titel, inhalt, tag):
     """
