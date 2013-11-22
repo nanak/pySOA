@@ -11,32 +11,15 @@ SOAServer|0|/home/pmuehl/Documents/pySOA/source/pySOA/SOAServer.py
 2=SOAServer
 -- END DICTIONARY
 -- START TREE 1
-28
-!<m|0|
-ali|0|
-aut|0|
-bit|0|
-con|0|
-doc|0|
-dom|0|
+11
 ent|1|entsch!11@
-fil|0|
-get|0|
-hel|0|
-i|0|
 inh|1|inhalt!11@
 ins|1|insert!18@
-nam|0|
-nod|0|
-ran|0|
-ref|0|
 roo|1|root!19@
-s|0|
 sea|1|search!18@
 ser|2|server!19@server!11@
 suc|1|suchwort!11@
 swo|1|swort!11@
-t|0|
 tag|1|tag!11@
 tit|1|titel!11@
 tre|1|tree!19@
