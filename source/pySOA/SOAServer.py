@@ -19,7 +19,8 @@ def search(suchwort):
     for tags in root.findall('eintrag'):
         titel = tags.find('titel').text
         inhalt = tags.find('inhalt').text
-        if titel.strip() == suchwort:
+        tag = tags.find('tags').text
+        if titel.strip() == suchwort or suchwort in tag.strip():
             return inhalt.strip()
         else:
             continue
@@ -37,7 +38,7 @@ def insert(titel, inhalt, tag):
     b.text = titel
     c = ET.SubElement(a, 'inhalt')
     c.text= inhalt
-    d = ET.SubElement(c, 'tags')
+    d = ET.SubElement(a, 'tags')
     d.text = tag
     root.append(a)
     tree.write('wissensdatenbank.xml', encoding='utf-8')
